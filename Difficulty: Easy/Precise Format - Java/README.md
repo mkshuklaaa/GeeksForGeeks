@@ -4,7 +4,7 @@
 <li><span style="font-size: 14pt;">Output the exact result of <code>a / b</code>.</span></li>
 <li><span style="font-size: 14pt;">Format and output the result of <code>a / b</code> rounded to three decimal places.</span></li>
 </ol>
-<p><span style="font-size: 14pt;">You may use<code><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">&nbsp;</span><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: #2dc26b;"><a style="color: #2dc26b;" href="https://www.geeksforgeeks.org/formatted-output-in-java/">System.out.format()</a></span></code> to format the output.</span></p>
+<p><span style="font-size: 14pt;">You may use<code><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">&nbsp;</span><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; color: rgb(45, 194, 107); --darkreader-inline-color: var(--darkreader-text-2dc26b, #4ed686);" data-darkreader-inline-color=""><a style="color: rgb(45, 194, 107); --darkreader-inline-color: var(--darkreader-text-2dc26b, #4ed686);" href="https://www.geeksforgeeks.org/formatted-output-in-java/" data-darkreader-inline-color="">System.out.format()</a></span></code> to format the output.</span></p>
 <p><span style="font-size: 14pt;">You need to return an ArrayList with two values:</span></p>
 <ul>
 <li><span style="font-size: 14pt;">The first value is the exact result of <code>a / b</code>.</span></li>
