@@ -1,32 +1,31 @@
 class Solution {
-    public void helper(int[][] maze, ArrayList<String> ans, String res, int sr, int ec, boolean[][] visited) {
-        int m = maze.length , n = maze[0].length;
-
-        if (sr < 0 || ec < 0 || sr >= m || ec >= n || visited[sr][ec] || maze[sr][ec] == 0) return;
-
-        if (sr == m-1 && ec == n-1) {
-            ans.add(res);
+    // Function to find all possible paths
+    public void print(int sr,int sc,int er,int ec, String s,boolean[][] isVisited,ArrayList<String> ans,int[][] maze){
+        
+        if(sr<0 || sc<0) return;
+        if(sr>er || sc>ec) return;
+        if(maze[sr][sc]==0) return;
+        if(isVisited[sr][sc]) return;
+        if(sr==er && sc==ec){
+            ans.add(s);
             return;
         }
-
-        visited[sr][ec] = true;
-
-        helper(maze, ans, res + "D", sr+1, ec, visited);
-        helper(maze, ans, res + "L", sr, ec-1, visited);
-        helper(maze, ans, res + "R", sr, ec+1, visited);
-        helper(maze, ans, res + "U", sr-1, ec, visited);
-
-        visited[sr][ec] = false;
+        isVisited[sr][sc] = true;
+        print(sr+1,sc,er,ec,s+"D",isVisited,ans,maze);
+        print(sr,sc-1,er,ec,s+"L",isVisited,ans,maze);
+        print(sr,sc+1,er,ec,s+"R",isVisited,ans,maze);
+        print(sr-1,sc,er,ec,s+"U",isVisited,ans,maze);
+        
+        
+        isVisited[sr][sc] = false;
+    
     }
-
     public ArrayList<String> ratInMaze(int[][] maze) {
+        // code here
         ArrayList<String> ans = new ArrayList<>();
-        int n = maze.length;
-        boolean[][] visited = new boolean[n][n];
-        if (maze[0][0] == 1)
-            helper(maze, ans, "", 0, 0, visited);
-
+        boolean[][] isVisited = new boolean[maze.length][maze[0].length];
+        print(0,0,maze.length-1,maze[0].length-1,"",isVisited,ans,maze);
         return ans;
+        
     }
 }
-
