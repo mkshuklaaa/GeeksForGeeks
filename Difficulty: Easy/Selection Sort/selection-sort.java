@@ -1,15 +1,20 @@
 class Solution {
+    void swap(int[] arr,int i,int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
     void selectionSort(int[] arr) {
         // code here
-        int n= arr.length;
+        int n = arr.length;
+        
         for(int i=0;i<n-1;i++){
-            int smallest = i;
-            for(int j=i+1;j<n;j++){
-                if(arr[j]<arr[smallest]) smallest = j;
-            }
-            int temp = arr[i];
-            arr[i] = arr[smallest];
-            arr[smallest] = temp;
+            int min = Integer.MAX_VALUE;
+            int idx = i;
+            for(int j=i;j<n;j++){ 
+                min = Math.min(min,arr[j]);
+                if (arr[j]==min) idx = j;
+            }swap(arr,i,idx);
         }
     }
 }
