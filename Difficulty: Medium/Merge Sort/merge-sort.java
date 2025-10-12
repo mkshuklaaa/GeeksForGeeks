@@ -1,31 +1,31 @@
 class Solution {
     
-    void merge(int[] arr, int l, int mid, int r) {
-        int an = mid - l + 1;
-        int bn = r - mid;
+    void merge(int arr[], int l, int r, int mid) {
+        int[] merged = new int[r - l + 1];
         
-        int[] a = new int[an];
-        int[] b = new int[bn];
+        int a = l;
+        int b = mid + 1;
+        int i = 0;
         
-        for(int i = 0; i < an; i++) a[i] = arr[l + i];
-        for(int j = 0; j < bn; j++) b[j] = arr[mid + 1 + j];
-        
-        int i = 0, j = 0, k = l;
-        
-        while(i < an && j < bn) {
-            if(a[i] <= b[j]) arr[k++] = a[i++];
-            else arr[k++] = b[j++];
+        while(a <= mid && b <= r) {
+            if(arr[a] <= arr[b]) merged[i++] = arr[a++];
+            else merged[i++] = arr[b++];
         }
         
-        while(i < an) arr[k++] = a[i++];
-        while(j < bn) arr[k++] = b[j++];
+        while(a <= mid) merged[i++] = arr[a++];
+        while(b <= r) merged[i++] = arr[b++];
+        
+        // Copy back
+        for (i = 0; i < merged.length; i++) {
+            arr[l + i] = merged[i];
+        }
     }
 
-    void mergeSort(int[] arr, int l, int r) {
+    void mergeSort(int arr[], int l, int r) {
         if(l >= r) return;
-        int mid = l(l + r) / 2;
+        int mid = (l + r) / 2;
         mergeSort(arr, l, mid);
         mergeSort(arr, mid + 1, r);
-        merge(arr, l, mid, r);
+        merge(arr, l, r, mid);
     }
 }
